@@ -1,9 +1,17 @@
 function findShortestString(arr) {
-  let lenArr = arr.map(el => {
-    return(el.length)
+  // method 1 : functional
+  // let lenArr = arr.map(el => {
+  //   return(el.length)
+  // })
+  // let index = lenArr.indexOf(Math.min(...lenArr))
+  // return(arr[index])
+
+  // method 2 : functional
+  let smallest = arr.reduce((a, b) => {
+    return(a.length <= b.length ? a : b)
   })
-  let index = lenArr.indexOf(Math.min(...lenArr))
-  return(arr[index])
+
+  return(smallest)
 }
 
 if (require.main === module) {
@@ -30,3 +38,7 @@ module.exports = findShortestString;
 // .map Strings, do .length. 
 // find the index of the min, 
 // return arr[index]
+
+// method 2
+// use the reduce method
+// arr.reduce((a,b) => return the larger value )
