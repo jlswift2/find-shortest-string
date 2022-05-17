@@ -1,5 +1,9 @@
 function findShortestString(arr) {
-  // type your code here
+  let lenArr = arr.map(el => {
+    return(el.length)
+  })
+  let index = lenArr.indexOf(Math.min(...lenArr))
+  return(arr[index])
 }
 
 if (require.main === module) {
@@ -22,5 +26,7 @@ if (require.main === module) {
 
 module.exports = findShortestString;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// method 1
+// .map Strings, do .length. 
+// find the index of the min, 
+// return arr[index]
